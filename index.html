@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#d80d2e">
+  <title>TicketYetu — Events & Tickets in Kenya</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="TicketYetu home"><span class="cart">▰</span><span>ticket<br><small>yetu</small></span></a>
+    <button id="menuBtn" class="menu" aria-label="Open menu">☰</button>
+  </header>
+  <nav id="nav" class="nav hidden"><a href="#events">Events</a><a href="#how">How it works</a><a href="#support">Support</a></nav>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">YOUR NEXT EXPERIENCE STARTS HERE</p>
+      <h1>Good times.<br><span>One ticket away.</span></h1>
+      <p>Discover concerts, festivals and culture moments happening across Kenya.</p>
+      <a class="primary-link" href="#events">Explore events <span>↗</span></a>
+      <div class="hero-note"><span class="dot"></span> Discover • Book • Show your ticket</div>
+    </section>
+
+    <section id="events" class="section">
+      <div class="section-head"><div><p class="eyebrow">TRENDING NOW</p><h2>What's happening.</h2></div><span class="count" id="eventCount">Events</span></div>
+      <div id="eventsGrid" class="events-grid"><p>Loading events…</p></div>
+    </section>
+
+    <section id="how" class="how section">
+      <p class="eyebrow">SIMPLE & SECURE</p><h2>Your plan. Your ticket.</h2>
+      <div class="steps"><article><b>01</b><h3>Choose an event</h3><p>Find the event and ticket tier that fits your plans.</p></article><article><b>02</b><h3>Pay securely</h3><p>Use M-Pesa or card once a real payment provider is connected.</p></article><article><b>03</b><h3>Get your ticket</h3><p>Receive a verified QR ticket after payment confirmation is implemented.</p></article></div>
+    </section>
+    <footer id="support"><strong>ticket yetu</strong><p>Made for memorable moments in Kenya.</p><small>Demo starter website — payment processing is not yet live.</small></footer>
+  </main>
+
+  <dialog id="checkoutDialog">
+    <form id="checkoutForm">
+      <div class="dialog-head"><div><p class="eyebrow">SECURE CHECKOUT</p><h2 id="checkoutTitle">Get tickets</h2></div><button type="button" id="closeDialog" class="close" aria-label="Close">×</button></div>
+      <p id="checkoutVenue" class="muted"></p>
+      <label>Ticket type<select id="ticketSelect" required></select></label>
+      <label>Quantity<input id="quantity" type="number" min="1" max="10" value="1" required></label>
+      <div class="total-row"><span>Total</span><strong id="total">KES 0</strong></div>
+      <label>Full name<input id="fullName" autocomplete="name" required minlength="2" placeholder="Your full name"></label>
+      <label>Email<input id="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+      <label>Phone number<input id="phone" type="tel" autocomplete="tel" required placeholder="07XX XXX XXX"></label>
+      <fieldset><legend>Payment method</legend>
+        <label class="pay-choice"><input type="radio" name="paymentMethod" value="mpesa" checked> <span>🟢 M-Pesa</span></label>
+        <label class="pay-choice"><input type="radio" name="paymentMethod" value="card"> <span>💳 Card</span></label>
+      </fieldset>
+      <p class="notice">Demo mode: this form will not charge you or issue a real ticket.</p>
+      <button class="submit" type="submit" id="payBtn">Continue to payment</button>
+      <p id="checkoutMessage" role="status" class="message"></p>
+    </form>
+  </dialog>
+  <script src="/app.js"></script>
+</body>
+</html>
